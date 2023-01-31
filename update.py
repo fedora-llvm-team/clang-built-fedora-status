@@ -502,7 +502,7 @@ package_exclude_list = [
 ]
 
 form = cgi.FieldStorage()
-tags = ['f35', 'f36', 'clang-built-f36']
+tags = ['f35', 'f36', 'f37', 'clang-built-f36', 'clang-built-f37']
 if "tag" in form:
     tag = form['tag'].value
     if tag in tags:
@@ -513,7 +513,9 @@ use_copr = True
 comparisons = [
 (KojiResults('f35'), CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f35')),
 (KojiResults('f36'), CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f36')),
+(KojiResults('f37'), CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f37')),
 (CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f35'), CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f36')),
+(CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f36'), CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f37')),
 ]
 
 # Assume copr-reporter is in the current directory
@@ -605,7 +607,9 @@ for results in comparisons:
     f.write("""
     <a href='f35-status.html'>Fedora 35</a>
     <a href='f36-status.html'>Fedora 36</a>
-    <a href='clang-built-f36-status.html'>Clang f35 vs f36</a>(<a href='copr-reporter-f36.html'>Detailed</a>)
+    <a href='f37-status.html'>Fedora 37</a>
+    <a href='clang-built-f36-status.html'>Clang f35 vs f36</a>
+    <a href='clang-built-f37-status.html'>Clang f36 vs f37</a>
     """)
 
     f.write(stats.html_table())
