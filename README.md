@@ -21,7 +21,7 @@ fedpkg mockbuild --root fedora-37-clang-15-x86_64
 
 ```
 
-If you don't want to use fepkg you can use plain mock instead.
+If you don't want to use fedpkg you can use plain mock instead.
 
 ```bash
 # Clone the repo
