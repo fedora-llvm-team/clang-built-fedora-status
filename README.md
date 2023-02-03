@@ -29,7 +29,7 @@ git clone https://src.fedoraproject.org/rpms/lld.git
 cd lld
 
 # Download the sources
-spec -a -g lld.spec
+spectool -a -g lld.spec
 
 # Build the SRPM
 mock -r fedora-37-clang-15-x86_64 --buildsrpm --spec lld.spec --sources . --resultdir .
