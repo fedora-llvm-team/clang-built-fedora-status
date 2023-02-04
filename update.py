@@ -533,12 +533,6 @@ if len(tags) !=1 and os.path.isdir('./copr-reporter'):
     old_cwd = os.getcwd()
     os.chdir('./copr-reporter')
 
-    for p in pages:
-        print("COPR REPORTER", p)
-        subprocess.call('python3 ./json_generator.py {}.ini'.format(p), shell = True)
-        subprocess.call('python3 ./html_generator.py', shell = True)
-        subprocess.call('cp report.html {}/copr-reporter-{}.html'.format(old_cwd, p), shell = True)
-
     os.chdir(old_cwd)
     for p in pages:
         print('TODO', p)
@@ -629,8 +623,8 @@ for results in comparisons:
     <a href='f35-status.html'>Fedora 35</a>
     <a href='f36-status.html'>Fedora 36</a>
     <a href='f37-status.html'>Fedora 37</a>
-    <a href='clang-built-f36-status.html'>Clang f35 vs f36</a>(<a href='copr-reporter-f36.html'>Detailed</a>)
-    <a href='clang-built-f37-status.html'>Clang f36 vs f37</a>(<a href='copr-reporter-f37.html'>Detailed</a>)
+    <a href='clang-built-f36-status.html'>Clang f35 vs f36</a>
+    <a href='clang-built-f37-status.html'>Clang f36 vs f37</a>
     <a href='f37-todo.html'>TODO</a><br><br>""")
 
     f.write(stats.html_table())
