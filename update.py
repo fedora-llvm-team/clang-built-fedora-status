@@ -43,7 +43,7 @@ class CoprResults:
     def get_package_link(self, pkg):
         return '{}{}'.format(self.get_package_base_link(), pkg.name)
 
-    def get_packages(self, clang_gcc_br_pkgs_fedoran):
+    def get_packages(self, clang_gcc_br_pkgs_fedora):
         pkgs = {}
         for p in self.client.package_proxy.get_list(self.owner, self.project, with_latest_succeeded_build=True, with_latest_build=True):
             build_passes = True
@@ -254,7 +254,7 @@ class PkgCompare:
         return self.STATUS_PASS
 
 
-    def html_row(self, index, pkg_notes = None):
+    def html_row(self, index, pkg_notes):
         row_style=''
         clang_nvr=''
         build_success = False
@@ -467,11 +467,18 @@ def get_gcc_clang_users_fedora():
     q = q.filter(requires=['gcc', 'gcc-c++', 'clang'])
     return set([p.name for p in list(q)])
 
-def update_status(mutex):
-    while not mutex.locked():
-        time.sleep(10)
-        print("Processing...")
-        sys.stdout.flush()
+def get_package_notes(fedora_version):
+    try:
+        notes_cfg = open(f'status/fedora-{fedora_version}.cfg')
+    except:
+        return {}
+    config = configparser.ConfigParser()
+    config.optionxform = str
+    config.read_file(notes_cfg)
+    notes = {}
+    for s in config.sections():
+        notes.update(config[s])
+    return notes
 
 cgitb.enable()
 
@@ -482,12 +489,6 @@ print("<!DOCTYPE HTML><html><head>")
 sys.stdout.flush()
 
 executor = concurrent.futures.ThreadPoolExecutor(max_workers=3)
-
-# Run a thread to periodically write to stdout to avoid the web server
-# timing out.  There's probably a way to increase the web server timeout
-# but I could not figure it out.
-status_mutex = threading.Lock()
-executor.submit(update_status, status_mutex)
 
 clang_gcc_br_pkgs_fedora = executor.submit(get_gcc_clang_users_fedora)
 
@@ -510,19 +511,23 @@ if "tag" in form:
 
 use_copr = True
 
+f35 = CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f35')
+f36 = CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f36')
+f37 = CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f37')
+
 comparisons = [
-(KojiResults('f35'), CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f35')),
-(KojiResults('f36'), CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f36')),
-(KojiResults('f37'), CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f37')),
-(CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f35'), CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f36')),
-(CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f36'), CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f37')),
+(KojiResults('f35'), f35),
+(KojiResults('f36'), f36),
+(KojiResults('f37'), f37),
+(f35, f36),
+(f36, f37),
 ]
 
 # Assume copr-reporter is in the current directory
 
 if len(tags) !=1 and os.path.isdir('./copr-reporter'):
 
-    pages = ['f36']
+    pages = ['f36', 'f37']
 
     print("COPR REPORTER", pages)
     old_cwd = os.getcwd()
@@ -535,8 +540,19 @@ if len(tags) !=1 and os.path.isdir('./copr-reporter'):
         subprocess.call('cp report.html {}/copr-reporter-{}.html'.format(old_cwd, p), shell = True)
 
     os.chdir(old_cwd)
+    for p in pages:
+        print('TODO', p)
+        subprocess.call(f'python3 ./todo_generator.py ./copr-reporter/{p}.ini', shell = True)
+        subprocess.call('python3 ./copr-reporter/html_generator.py', shell = True)
+        subprocess.call(f'cp report.html {p}-todo.html', shell = True)
 
 for results in comparisons:
+
+    # Get list of package notes
+    fedora_version = results[1].project[-2:]
+    print("Compare: ", fedora_version)
+    package_notes = executor.submit(get_package_notes, fedora_version)
+
     stats = Stats()
 
     file_prefix = results[0].get_file_prefix(True)
@@ -580,6 +596,11 @@ for results in comparisons:
 
         c.package_base_link = results[1].get_package_base_link()
 
+        if c.pkg.name in package_notes.result():
+            c.add_note(package_notes.result()[c.pkg.name])
+        elif '__error' in package_notes.result():
+            c.add_note('Failed to load notes: {}'.format(package_notes.result()['__error']))
+
         test_pkg = test_pkgs.get(c.pkg.name, None)
         if not test_pkg:
             stats.num_missing += 1
@@ -608,9 +629,9 @@ for results in comparisons:
     <a href='f35-status.html'>Fedora 35</a>
     <a href='f36-status.html'>Fedora 36</a>
     <a href='f37-status.html'>Fedora 37</a>
-    <a href='clang-built-f36-status.html'>Clang f35 vs f36</a>
-    <a href='clang-built-f37-status.html'>Clang f36 vs f37</a>
-    """)
+    <a href='clang-built-f36-status.html'>Clang f35 vs f36</a>(<a href='copr-reporter-f36.html'>Detailed</a>)
+    <a href='clang-built-f37-status.html'>Clang f36 vs f37</a>(<a href='copr-reporter-f37.html'>Detailed</a>)
+    <a href='f37-todo.html'>TODO</a><br><br>""")
 
     f.write(stats.html_table())
     f.write("""
@@ -628,12 +649,11 @@ for results in comparisons:
           <tr><th colspan='2'>Fedora</th><th colspan='4'>Fedora Clang</th></tr>
           <tr><th colspan='2'>Latest Build</th><th>Latest Build</th><th>Latest Success</th><th></th><th>Notes</th>""")
     for index, c in enumerate(pkg_compare_list):
-        f.write(c.html_row(index))
+        f.write(c.html_row(index, package_notes.result()))
     f.write("</table></body></html>")
 
     f.close()
 
-status_mutex.acquire()
 executor.shutdown(True)
 
 page_redirect='index.html'
