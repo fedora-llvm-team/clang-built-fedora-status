@@ -20,6 +20,7 @@ jobs:
         git \
         python3-copr \
         python3-hawkey \
+        python3-jinja2 \
         python3-koji
 
     - name: Fetch sources
