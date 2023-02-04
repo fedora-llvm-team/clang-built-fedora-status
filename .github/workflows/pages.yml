@@ -33,8 +33,11 @@ jobs:
         git config --global user.email "noreply@github.com"
         git config --global user.name "Github Pages"
         python3 update.py
+        mkdir html
+        mv *.html html/
         git fetch origin gh-pages
         git checkout gh-pages
+        mv html/*.html .
         git add *.html
         git commit -a -m "Update pages"
         git push origin gh-pages:gh-pages
