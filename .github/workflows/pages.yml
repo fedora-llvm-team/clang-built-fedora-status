@@ -31,11 +31,8 @@ jobs:
         git config --global --add safe.directory "$GITHUB_WORKSPACE"
         git config --global user.email "noreply@github.com"
         git config --global user.name "Github Pages"
-        cp update.py update.py.main
-        git fetch origin gh-pages
-        git checkout gh-pages
-        cp update.py.main update.py
         python3 update.py
-        git add *.html *.py
+        git checkout gh-pages
+        git add *.html
         git commit -a -m "Update pages"
         git push origin gh-pages:gh-pages
