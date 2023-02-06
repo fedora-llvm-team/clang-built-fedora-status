@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <link rel="preload" href="https://static.redhat.com/libs/redhat/redhat-font/2/webfonts/RedHatText/RedHatText-Regular.woff" as="font" type="font/woff" crossorigin>
+    <link type="text/css" rel="stylesheet" href="https://static.redhat.com/libs/redhat/redhat-theme/5/advanced-theme.css" media="all" />
+    <link type="text/css" rel="stylesheet" href="https://static.redhat.com/libs/redhat/redhat-font/2/webfonts/red-hat-font.css" media="all" />
+    <style>
+      .redhat_font {
+        font-family: "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif;
+      }
+      .stats_table {
+        font-family: "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif;
+      }
+      .stats_table th {
+        background-color: #252525;
+        border: 0px;
+      }
+      .stats_table td {
+        border: 0px;
+      }
+      .stats_per_col {
+        width: 4ch;
+        text-align: right;
+      }
+      .even_row {
+        background-color: #DCDCDC;
+      }
+      .todo_row {
+        background-color: #f9ebea;
+      }
+      th {
+        background-color: #0066cc;
+        color: #ffffff;
+      }
+      th, td {
+        border-right: 4px solid white;
+        max-width: 30ch;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .pkg_cell .tooltip {
+        visibility: hidden;
+        position: absolute;
+        z-index: 1;
+      }
+      .pkg_cell:hover .tooltip {
+        visibility: visible;
+      }
+      .last_updated {
+        font-size: 0.8em;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: inline-block;
+      }
+      .form_cell {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body class='redhat_font'>
+    <a href='f35-status.html'>Fedora 35</a>
+    <a href='f36-status.html'>Fedora 36</a>
+    <a href='f37-status.html'>Fedora 37</a>
+    <a href='clang-built-f36-status.html'>Clang f35 vs f36</a>
+    <a href='clang-built-f37-status.html'>Clang f36 vs f37</a>
+    <a href='f37-todo.html'>TODO</a>
+    <br><br>
+
+
+    <table class='stats_table even_row'>
+      <tr><th colspan='3'>Summary</th></tr>
+      <tr><td>Fedora Packages:</td><td style='text-align: right;'>{{ stats.num_fedora_pkgs }}</td><td></td></tr>
+      <tr><td>Clang Builds:</td><td style='text-align: right; width:{ num_chars }ch'>{{ stats.num_clang_pkgs }}</td><td class='stats_per_col' style='color:{}'>{{ "%.1f" | format(100 * (stats.num_clang_pkgs / stats.num_fedora_pkgs)) }}%</td></tr>
+      <tr><td>Clang Builds Latest:</td><td style='text-align: right; width:{num_chars}ch'>{{ stats.num_up_to_date_pkgs }}</td><td class='stats_per_col' style='color:{}'>{{ "%.1f" | format(100 * (stats.num_up_to_date_pkgs / stats.num_fedora_pkgs)) }}%</tr>
+      <tr><td>Clang Builds Or Has Note:</td><td style='text-align: right; width:{num_chars}ch'>{{ stats.num_pass_or_note  }}</td><td class='stats_per_col'>{{ "%.1f" | format(100 * (stats.num_pass_or_note / stats.num_fedora_pkgs)) }}%</tr>
+      <tr><td>Regressions: :</td><td style='text-align: right; width:{num_chars}ch'>{{ stats.num_regressions  }}</td><td class='stats_per_col'>{{ "%.1f" | format(100 * (stats.num_regressions / stats.num_fedora_pkgs)) }}%</tr>
+      <tr><td>Fixed:</td><td style='text-align: right; width:{num_chars}ch'>{{ stats.num_fixed }}</td><td class='stats_per_col'>{{ "%.1f" | format(100 * (stats.num_fixed / stats.num_fedora_pkgs)) }}%</tr>
+      <tr><td>Missing:</td><td style='text-align: right; width:{num_chars}ch'>{{ stats.num_missing }}</td><td class='stats_per_col'>{{ "%.1f" | format(100 * (stats.num_missing / stats.num_fedora_pkgs)) }}%</tr>
+    </table>
+    <div class="last_updated">Last Updated: <div id='timestamp' style="display: inline-block;">{{ date.strftime("%m/%d/%Y %H:%M:%S UTC") }}</div></div>
+    <script>
+      var date = new Date(document.getElementById("timestamp").innerHTML);
+      document.getElementById("timestamp").innerHTML = date.toString();
+    </script>
+    <table>
+      <tr><th colspan='2'>Fedora</th><th colspan='4'>Fedora Clang</th></tr>
+      <tr><th colspan='2'>Latest Build</th><th>Latest Build</th><th>Latest Success</th><th></th><th>Notes</th></tr>
+      {% for p in pkg_compare_list %}
+        <tr {{ p.row_style }}>
+        <td class='pkg_cell'><a href='{{ p.fedora_build_url }}'><span class='tooltip'>{{ p.nvr}}</span>{{ p.nvr }}</a></td>
+        <td>{{ p.rebuild_link }}</td>
+        <td class='pkg_cell'>{{ p.clang_build_latest_url }}</td>
+        <td class='pkg_cell' style='max-width: 20ch;'>{{ p.clang_build_url }}</td>
+        <td>{{ p.history }}</td>
+        <td class='pkg_cell'><span class='tooltip'>{{ p.note }}</span>{{ p.short_note }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

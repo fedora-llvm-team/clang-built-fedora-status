@@ -19,6 +19,7 @@ import time
 import os
 import sys
 import subprocess
+import jinja2
 
 class CoprResults:
     def __init__(self, url, owner, project):
@@ -312,26 +313,16 @@ class PkgCompare:
 
         if not has_note and not build_success:
             row_style=" class='todo_row'"
-        else:
-            stats.num_pass_or_note += 1
 
-        return """
-            <tr{row_style}>
-              <td class='pkg_cell'><a href='{fedora_build_url}'><span class='tooltip'>{nvr}</span>{nvr}</a></td>
-              <td>{column2}</td>
-              <td class='pkg_cell'>{column3}</td>
-              <td class='pkg_cell' style='max-width: 20ch;'>{column4}</td>
-              <td>{history}</td>
-              <td class='pkg_cell'><span class='tooltip'>{note}</span>{short_note}</td>
-            </tr>""".format(row_style =row_style,
-                            fedora_build_url = get_build_link('https://koji.fedoraproject.org/koji/', self.pkg),
-                            nvr = self.pkg.nvr + (' (FAILED)' if use_copr and not self.pkg.build_passes else ''),
-                            column2 = column2,
-                            column3 = column3,
-                            column4 = column4,
-                            pkg_name = self.pkg.name,
-                            history = history,
-                            note = note, short_note = short_note)
+        self.row_style = row_style
+        self.fedora_build_url = get_build_link('https://koji.fedoraproject.org/koji/', self.pkg)
+        self.nvr = self.pkg.nvr + (' (FAILED)' if use_copr and not self.pkg.build_passes else '')
+        self.rebuild_link = column2
+        self.clang_build_latest_url = column3
+        self.clang_build_url = column4
+        self.history = history
+        self.note = note
+        self.short_note = short_note
 
 class Stats:
     def __init__(self):
@@ -351,102 +342,6 @@ class Stats:
         if percent < 66.7:
             return '#CC9900'
         return 'green'
-
-
-    def html_table(self):
-        clang_percent = 100 * (self.num_clang_pkgs / self.num_fedora_pkgs)
-        clang_percent_color = Stats.html_color_for_percent(clang_percent)
-        up_to_date_percent = 100 * (self.num_up_to_date_pkgs / self.num_fedora_pkgs)
-        up_to_date_percent_color = Stats.html_color_for_percent(clang_percent)
-        pass_or_note_percent = 100 * (self.num_pass_or_note / self.num_fedora_pkgs)
-        regression_percent = 100 * (self.num_regressions / self.num_fedora_pkgs)
-        fixed_percent = 100 * (self.num_fixed / self.num_fedora_pkgs)
-        missing_percent = 100 * (self.num_missing / self.num_fedora_pkgs)
-        num_chars = len(str(self.num_fedora_pkgs))
-
-
-        return """
-            <table class='stats_table even_row'>
-              <tr><th colspan='3'>Summary</th></tr>
-              <tr><td>Fedora Packages:</td><td style='text-align: right;'>{}</td><td></td></tr>
-              <tr><td>Clang Builds:</td><td style='text-align: right; width:{num_chars}ch'>{}</td><td class='stats_per_col' style='color:{}'>{:.1f}%</td></tr>
-              <tr><td>Clang Builds Latest:</td><td style='text-align: right; width:{num_chars}ch'>{}</td><td class='stats_per_col' style='color:{}'>{:.1f}%</tr>
-              <tr><td>Clang Builds Or Has Note:</td><td style='text-align: right; width:{num_chars}ch'>{}</td><td class='stats_per_col'>{:.1f}%</tr>
-              <tr><td>Regressions: :</td><td style='text-align: right; width:{num_chars}ch'>{}</td><td class='stats_per_col'>{:.1f}%</tr>
-              <tr><td>Fixed:</td><td style='text-align: right; width:{num_chars}ch'>{}</td><td class='stats_per_col'>{:.1f}%</tr>
-              <tr><td>Missing:</td><td style='text-align: right; width:{num_chars}ch'>{}</td><td class='stats_per_col'>{:.1f}%</tr>
-            </table>""".format(self.num_fedora_pkgs,
-                    self.num_clang_pkgs, clang_percent_color, clang_percent,
-                    self.num_up_to_date_pkgs,up_to_date_percent_color, up_to_date_percent,
-                    self.num_pass_or_note, pass_or_note_percent,
-                    self.num_regressions, regression_percent,
-                    self.num_fixed, fixed_percent,
-                    self.num_missing, missing_percent,
-                    num_chars = num_chars)
-
-
-def get_html_header():
-    return """
-<html>
-  <head>
-    <link rel="preload" href="https://static.redhat.com/libs/redhat/redhat-font/2/webfonts/RedHatText/RedHatText-Regular.woff" as="font" type="font/woff" crossorigin>
-    <link type="text/css" rel="stylesheet" href="https://static.redhat.com/libs/redhat/redhat-theme/5/advanced-theme.css" media="all" />
-    <link type="text/css" rel="stylesheet" href="https://static.redhat.com/libs/redhat/redhat-font/2/webfonts/red-hat-font.css" media="all" />
-    <style>
-      .redhat_font {
-        font-family: "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif;
-      }
-      .stats_table {
-        font-family: "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif;
-      }
-      .stats_table th {
-        background-color: #252525;
-        border: 0px;
-      }
-      .stats_table td {
-        border: 0px;
-      }
-      .stats_per_col {
-        width: 4ch;
-        text-align: right;
-      }
-      .even_row {
-        background-color: #DCDCDC;
-      }
-      .todo_row {
-        background-color: #f9ebea;
-      }
-      th {
-        background-color: #0066cc;
-        color: #ffffff;
-      }
-      th, td {
-        border-right: 4px solid white;
-        max-width: 30ch;
-        overflow: hidden;
-        white-space: nowrap;
-      }
-      .pkg_cell .tooltip {
-        visibility: hidden;
-        position: absolute;
-        z-index: 1;
-      }
-      .pkg_cell:hover .tooltip {
-        visibility: visible;
-      }
-      .last_updated {
-        font-size: 0.8em;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        display: inline-block;
-      }
-      .form_cell {
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </head>
-  <body class='redhat_font'>"""
 
 
 def get_gcc_clang_users_fedora():
@@ -534,6 +429,7 @@ if len(tags) !=1 and os.path.isdir('./copr-reporter'):
     os.chdir('./copr-reporter')
 
     os.chdir(old_cwd)
+    pages = []
     for p in pages:
         print('TODO', p)
         subprocess.call(f'python3 ./todo_generator.py ./copr-reporter/{p}.ini', shell = True)
@@ -575,13 +471,8 @@ for results in comparisons:
     if len(baseline_pkgs) == 0 or len(test_pkgs) == 0:
         print('Failed:', file_prefix, file = sys.stderr)
         f = open('{}-status.html'.format(file_prefix), 'w')
-        f.write(get_html_header())
+        f.write("<html><body>")
         f.write('Failed to load package lists')
-        f.write("""
-          <form style="display: inline;" action="update.py">
-            <input type="hidden" name="tag" value="{}" />
-            <input type="submit" value="Update">
-          </form>""")
         f.write("</body></html>")
         f.close()
         continue
@@ -616,36 +507,18 @@ for results in comparisons:
         elif status == c.STATUS_FIXED:
             stats.num_fixed += 1
 
+    loader = jinja2.FileSystemLoader(searchpath="./")
+    environment = jinja2.Environment(loader=loader)
+    template = environment.get_template('status-template.html')
     f = open('{}-status.html'.format(file_prefix), 'w')
-    f.write(get_html_header())
-
-    f.write("""
-    <a href='f35-status.html'>Fedora 35</a>
-    <a href='f36-status.html'>Fedora 36</a>
-    <a href='f37-status.html'>Fedora 37</a>
-    <a href='clang-built-f36-status.html'>Clang f35 vs f36</a>
-    <a href='clang-built-f37-status.html'>Clang f36 vs f37</a>
-    <a href='f37-todo.html'>TODO</a><br><br>""")
-
-    f.write(stats.html_table())
-    f.write("""
-        <form style="display: inline;" action="update.py">
-          <input type="hidden" name="tag" value="{}" />
-          <input type="submit" value="Update">
-        </form>
-          <div class="last_updated">Last Updated: <div id='timestamp' style="display: inline-block;">{}</div></div>
-            <script>
-              var date = new Date(document.getElementById("timestamp").innerHTML);
-              document.getElementById("timestamp").innerHTML = date.toString();
-            </script>""".format(file_prefix, datetime.datetime.utcnow().strftime("%m/%d/%Y %H:%M:%S UTC")))
-    f.write("""
-        <table>
-          <tr><th colspan='2'>Fedora</th><th colspan='4'>Fedora Clang</th></tr>
-          <tr><th colspan='2'>Latest Build</th><th>Latest Build</th><th>Latest Success</th><th></th><th>Notes</th>""")
     for index, c in enumerate(pkg_compare_list):
-        f.write(c.html_row(index, package_notes.result()))
-    f.write("</table></body></html>")
-
+        c.html_row(index, package_notes.result())
+    text = template.render(
+      stats = stats,
+      date=datetime.datetime.utcnow(),
+      pkg_compare_list = pkg_compare_list
+    )
+    f.write(text)
     f.close()
 
 executor.shutdown(True)
