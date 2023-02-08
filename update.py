@@ -398,7 +398,7 @@ package_exclude_list = [
 ]
 
 form = cgi.FieldStorage()
-tags = ['f35', 'f36', 'f37', 'clang-built-f36', 'clang-built-f37']
+tags = ['f36', 'f37', 'clang-built-f36', 'clang-built-f37']
 if "tag" in form:
     tag = form['tag'].value
     if tag in tags:
@@ -411,7 +411,6 @@ f36 = CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'cl
 f37 = CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f37')
 
 comparisons = [
-(KojiResults('f35'), f35),
 (KojiResults('f36'), f36),
 (KojiResults('f37'), f37),
 (f35, f36),
