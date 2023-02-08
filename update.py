@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 import cgi
-import cgitb
 import dnf
 import rpm
 import koji
@@ -375,14 +374,6 @@ def get_package_notes(fedora_version):
         notes.update(config[s])
     return notes
 
-cgitb.enable()
-
-# Return something right away so the server doesn't timeout.
-print("Content-Type: text/html")
-print("")
-print("<!DOCTYPE HTML><html><head>")
-sys.stdout.flush()
-
 executor = concurrent.futures.ThreadPoolExecutor(max_workers=3)
 
 clang_gcc_br_pkgs_fedora = executor.submit(get_gcc_clang_users_fedora)
@@ -521,15 +512,3 @@ for results in comparisons:
     f.close()
 
 executor.shutdown(True)
-
-page_redirect='index.html'
-if len(tags) == 1:
-    page_redirect="{}-status.html".format(tags[0])
-
-print ("""
-    <meta http-equiv="refresh" content="0; url={redirect}">
-  </head>
-  <body>
-    <a href="{redirect}">View Updated Page</a>
-  </body>
-</html>""".format(redirect = page_redirect))
