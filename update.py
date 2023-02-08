@@ -428,87 +428,85 @@ if len(tags) !=1 and os.path.isdir('./copr-reporter'):
 
 for results in comparisons:
 
-    # Get list of package notes
-    fedora_version = results[1].project[-2:]
-    print("Compare: ", fedora_version)
-    package_notes = executor.submit(get_package_notes, fedora_version)
+    try:
+        # Get list of package notes
+        fedora_version = results[1].project[-2:]
+        print("Compare: ", fedora_version)
+        package_notes = executor.submit(get_package_notes, fedora_version)
 
-    stats = Stats()
+        stats = Stats()
 
-    file_prefix = results[0].get_file_prefix(True)
-    if not file_prefix:
-        file_prefix = results[1].get_file_prefix(False)
+        file_prefix = results[0].get_file_prefix(True)
+        if not file_prefix:
+            file_prefix = results[1].get_file_prefix(False)
 
-    if file_prefix not in tags:
-        continue
-
-    baseline_pkgs = results[0].packages
-    test_pkgs = results[1].packages
-
-    # Filter out packages form exclude list
-    baseline_pkgs = baseline_pkgs.result()
-    for p in package_exclude_list:
-        if p in baseline_pkgs:
-            del baseline_pkgs[p]
-
-    pkg_compare_list = []
-    for p in sorted(baseline_pkgs.keys()):
-        pkg_compare_list.append(PkgCompare(baseline_pkgs[p]))
-
-    stats.num_fedora_pkgs = len(pkg_compare_list)
-    test_pkgs = test_pkgs.result()
-
-    if len(baseline_pkgs) == 0 or len(test_pkgs) == 0:
-        print('Failed:', file_prefix, file = sys.stderr)
-        f = open('{}-status.html'.format(file_prefix), 'w')
-        f.write("<html><body>")
-        f.write('Failed to load package lists')
-        f.write("</body></html>")
-        f.close()
-        continue
-
-    for c in pkg_compare_list:
-
-        c.package_base_link = results[1].get_package_base_link()
-
-        if c.pkg.name in package_notes.result():
-            c.add_note(package_notes.result()[c.pkg.name])
-        elif '__error' in package_notes.result():
-            c.add_note('Failed to load notes: {}'.format(package_notes.result()['__error']))
-
-        test_pkg = test_pkgs.get(c.pkg.name, None)
-        if not test_pkg:
-            stats.num_missing += 1
+        if file_prefix not in tags:
             continue
 
-        if test_pkg.build_passes:
-            stats.num_clang_pkgs += 1
-            stats.num_pass_or_note += 1
-        elif c.note:
-            stats.num_pass_or_note +=1
+        baseline_pkgs = results[0].packages
+        test_pkgs = results[1].packages
 
-        c.add_other_pkg(test_pkg)
-        if c.is_up_to_date():
-            stats.num_up_to_date_pkgs += 1
+        # Filter out packages form exclude list
+        baseline_pkgs = baseline_pkgs.result()
+        for p in package_exclude_list:
+            if p in baseline_pkgs:
+                del baseline_pkgs[p]
 
-        status = c.get_other_pkg_status()
-        if status == c.STATUS_REGRESSION:
-            stats.num_regressions += 1
-        elif status == c.STATUS_FIXED:
-            stats.num_fixed += 1
+        pkg_compare_list = []
+        for p in sorted(baseline_pkgs.keys()):
+            pkg_compare_list.append(PkgCompare(baseline_pkgs[p]))
 
-    loader = jinja2.FileSystemLoader(searchpath="./")
-    environment = jinja2.Environment(loader=loader)
-    template = environment.get_template('status-template.html')
-    f = open('{}-status.html'.format(file_prefix), 'w')
-    for index, c in enumerate(pkg_compare_list):
-        c.html_row(index, package_notes.result())
-    text = template.render(
-      stats = stats,
-      date=datetime.datetime.utcnow(),
-      pkg_compare_list = pkg_compare_list
-    )
-    f.write(text)
-    f.close()
+        stats.num_fedora_pkgs = len(pkg_compare_list)
+        test_pkgs = test_pkgs.result()
+
+        if len(baseline_pkgs) == 0 or len(test_pkgs) == 0:
+            raise Exception('Failed to load package lists')
+
+        for c in pkg_compare_list:
+
+            c.package_base_link = results[1].get_package_base_link()
+
+            if c.pkg.name in package_notes.result():
+                c.add_note(package_notes.result()[c.pkg.name])
+            elif '__error' in package_notes.result():
+                c.add_note('Failed to load notes: {}'.format(package_notes.result()['__error']))
+
+            test_pkg = test_pkgs.get(c.pkg.name, None)
+            if not test_pkg:
+                stats.num_missing += 1
+                continue
+
+            if test_pkg.build_passes:
+                stats.num_clang_pkgs += 1
+                stats.num_pass_or_note += 1
+            elif c.note:
+                stats.num_pass_or_note +=1
+
+            c.add_other_pkg(test_pkg)
+            if c.is_up_to_date():
+                stats.num_up_to_date_pkgs += 1
+
+            status = c.get_other_pkg_status()
+            if status == c.STATUS_REGRESSION:
+                stats.num_regressions += 1
+            elif status == c.STATUS_FIXED:
+                stats.num_fixed += 1
+
+        loader = jinja2.FileSystemLoader(searchpath="./")
+        environment = jinja2.Environment(loader=loader)
+        template = environment.get_template('status-template.html')
+        for index, c in enumerate(pkg_compare_list):
+            c.html_row(index, package_notes.result())
+        text = template.render(
+          stats = stats,
+          date=datetime.datetime.utcnow(),
+          pkg_compare_list = pkg_compare_list
+        )
+        f = open('{}-status.html'.format(file_prefix), 'w')
+        f.write(text)
+        f.close()
+    except Exception as e:
+        print(e)
+        continue
 
 executor.shutdown(True)
