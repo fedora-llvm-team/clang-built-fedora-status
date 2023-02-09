@@ -56,10 +56,6 @@ client_next = create_copr_client(copr_url = config.get('next', 'url', fallback =
                                  configfile = config.get('next', 'config', fallback = None))
 client_current = create_copr_client(copr_url = config.get('current', 'url', fallback = None),
                                     configfile = config.get('current', 'config', fallback = None))
-packages_next = client_next.package_proxy.get_list(config['next']['owner'],
-                                         config['next']['project'],
-                                         pagination={"order": "name"},
-                                         with_latest_build=True)
 
 missing = []
 failed = []
