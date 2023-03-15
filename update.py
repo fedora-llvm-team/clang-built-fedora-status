@@ -422,7 +422,6 @@ if len(tags) !=1 and os.path.isdir('./copr-reporter'):
     os.chdir('./copr-reporter')
 
     os.chdir(old_cwd)
-    pages = []
     for p in pages:
         print('TODO', p)
         subprocess.call(f'python3 ./todo_generator.py ./copr-reporter/{p}.ini', shell = True)
