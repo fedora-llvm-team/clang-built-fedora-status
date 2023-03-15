@@ -389,7 +389,7 @@ package_exclude_list = [
 ]
 
 form = cgi.FieldStorage()
-tags = ['f36', 'f37', 'clang-built-f36', 'clang-built-f37']
+tags = ['f36', 'f37', 'f38', 'clang-built-f36', 'clang-built-f37', 'clang-built-f38']
 if "tag" in form:
     tag = form['tag'].value
     if tag in tags:
@@ -400,19 +400,22 @@ use_copr = True
 f35 = CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f35')
 f36 = CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f36')
 f37 = CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f37')
+f38 = CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f38')
 
 comparisons = [
 (KojiResults('f36'), f36),
 (KojiResults('f37'), f37),
+(KojiResults('f38'), f38),
 (f35, f36),
 (f36, f37),
+(f37, f38),
 ]
 
 # Assume copr-reporter is in the current directory
 
 if len(tags) !=1 and os.path.isdir('./copr-reporter'):
 
-    pages = ['f36', 'f37']
+    pages = ['f36', 'f37', 'f38']
 
     print("COPR REPORTER", pages)
     old_cwd = os.getcwd()
