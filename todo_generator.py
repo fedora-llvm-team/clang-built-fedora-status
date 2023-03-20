@@ -46,7 +46,12 @@ def handle_missing_builds(builds_a, builds_b):
             if not has_arch(builds, arch):
                 builds.append(create_missing_build(arch))
 
-
+def add_url_build_log_field(project, packages):
+    for p in packages:
+        for c in p['chroots']:
+            chroot = p['chroots'][c]
+            p['url_build_log'] = "{}0{}-{}/builder-live.log{}".format(project['chroot_repos'][c], chroot['build_id'], p['name'],
+                                                                      ".gz" if chroot['state'] != 'running' else "")
 
 config_file = './config.ini'
 if len(sys.argv) == 2:
@@ -62,14 +67,14 @@ failed = []
 
 project_current = client_current.project_proxy.get(config['current']['owner'], config['current']['project'])
 project_next = client_current.project_proxy.get(config['next']['owner'], config['next']['project'])
-#print(project_current)
-#print(project_next)
 
-response = client_next.monitor_proxy.monitor(config['next']['owner'], config['next']['project'], additional_fields = ['url_build_log'])
+response = client_next.monitor_proxy.monitor(config['next']['owner'], config['next']['project'])
 packages_next = response['packages']
-response = client_current.monitor_proxy.monitor(config['current']['owner'], config['current']['project'], additional_fields = ['url_build_log'])
+response = client_current.monitor_proxy.monitor(config['current']['owner'], config['current']['project'])
 packages_current = response['packages']
 
+add_url_build_log_field(project_current, packages_current)
+add_url_build_log_field(project_next, packages_next)
 #print(json.dumps(packages_next))
 
 results = {}
