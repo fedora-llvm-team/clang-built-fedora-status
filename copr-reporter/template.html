@@ -89,7 +89,7 @@
                         {% if b.state == "canceled" %}
                         <i class="bi bi-slash-circle"></i>
                         {% endif %}
-                        <a href="{{ b['url_build_log'] }}"> {{ k.split('-')[-1] }} </a>
+                        <a href="{{ b.url_build_log }}"> {{ k.split('-')[-1] }} </a>
                     </p>
                     {% endfor %}
                 </td>
@@ -111,11 +111,7 @@
                         {% if b.state == "canceled" %}
                         <i class="bi bi-slash-circle"></i>
                         {% endif %}
-                        {% if b.url is not none %}
                         <a href="{{ b.url_build_log }}"> {{ k.split('-')[-1] }} </a>
-                        {% else %}
-                        {{ b.arch }}
-                        {% endif %}
 
                     </p>
                     {% endfor %}

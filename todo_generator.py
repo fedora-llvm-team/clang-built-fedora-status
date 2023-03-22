@@ -50,7 +50,7 @@ def add_url_build_log_field(project, packages):
     for p in packages:
         for c in p['chroots']:
             chroot = p['chroots'][c]
-            p['url_build_log'] = "{}0{}-{}/builder-live.log{}".format(project['chroot_repos'][c], chroot['build_id'], p['name'],
+            chroot['url_build_log'] = "{}0{}-{}/builder-live.log{}".format(project['chroot_repos'][c], chroot['build_id'], p['name'],
                                                                       ".gz" if chroot['state'] != 'running' else "")
 
 config_file = './config.ini'
