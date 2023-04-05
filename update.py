@@ -389,7 +389,7 @@ package_exclude_list = [
 ]
 
 form = cgi.FieldStorage()
-tags = ['f36', 'f37', 'f38', 'clang-built-f36', 'clang-built-f37', 'clang-built-f38']
+tags = ['f36', 'f37', 'f38', 'clang-built-f36', 'clang-built-f37', 'clang-built-f38', 'fedora-37-clang-16']
 if "tag" in form:
     tag = form['tag'].value
     if tag in tags:
@@ -401,6 +401,7 @@ f35 = CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'cl
 f36 = CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f36')
 f37 = CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f37')
 f38 = CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f38')
+f37_clang16 = CoprResults(u'https://copr.fedorainfracloud.org', 'tstellar', 'fedora-37-clang-16')
 
 comparisons = [
 (KojiResults('f36'), f36),
@@ -409,6 +410,7 @@ comparisons = [
 (f35, f36),
 (f36, f37),
 (f37, f38),
+(f37, f37_clang16)
 ]
 
 # Assume copr-reporter is in the current directory
