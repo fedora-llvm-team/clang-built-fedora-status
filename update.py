@@ -103,12 +103,13 @@ def remove_dist_tag(pkg):
 
 def remove_epoch(pkg):
     subject = Subject(pkg)
-    try:
-        nevr = subject.get_nevra_possibilities(forms=hawkey.FORM_NEVR)[0]
-        return "{}-{}-{}".format(nevr.name, nevr.version, nevr.release)
-    except:
+    possible_nevr = subject.get_nevra_possibilities(forms=hawkey.FORM_NEVR)
+    if not len(possible_nevr):
         print("Cannot remove epoch for ", pkg, sys.stderr)
         return pkg
+
+    nevr = possible_nevr[0]
+    return "{}-{}-{}".format(nevr.name, nevr.version, nevr.release)
 
 def get_package_link(koji_url, pkg):
     return "{}/search?type=package&match=glob&terms={}".format(
@@ -214,8 +215,14 @@ class PkgCompare:
     def compare_nvr(self, a_nvr, b_nvr):
         subject_a = Subject(a_nvr)
         subject_b = Subject(b_nvr)
-        nevra_a = subject_a.get_nevra_possibilities(forms=hawkey.FORM_NEVR)[0]
-        nevra_b = subject_b.get_nevra_possibilities(forms=hawkey.FORM_NEVR)[0]
+        possible_nevra_a = subject_a.get_nevra_possibilities(forms=hawkey.FORM_NEVR)
+        if not len(possible_nevra_a):
+            return 1
+        possible_nevra_b = subject_b.get_nevra_possibilities(forms=hawkey.FORM_NEVR)
+        if not len(possible_nevra_b):
+            return -1
+        nevra_a = possible_nevra_a[0]
+        nevra_b = possible_nevra_b[0]
         return rpm.labelCompare(("", nevra_a.version, nevra_a.release), ("", nevra_b.version, nevra_b.release))
 
     def is_up_to_date(self):
