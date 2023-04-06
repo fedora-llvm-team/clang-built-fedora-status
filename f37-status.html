@@ -66,6 +66,7 @@
     <a href='clang-built-f37-status.html'>Clang f36 vs f37</a>
     <a href='clang-built-f38-status.html'>Clang f37 vs f38</a>
     <a href='f38-todo.html'>TODO</a>
+    <a href='fedora-37-clang-16-status.html'>clang 15 vs clang 16 (Fedora 37)</a>
     <br><br>
 
 
@@ -74,12 +75,12 @@
       <tr><td>Fedora Packages:</td><td style='text-align: right;'>1432</td><td></td></tr>
       <tr><td>Clang Builds:</td><td style='text-align: right; width:{ num_chars }ch'>1149</td><td class='stats_per_col' style='color:{}'>80.2%</td></tr>
       <tr><td>Clang Builds Latest:</td><td style='text-align: right; width:{num_chars}ch'>1117</td><td class='stats_per_col' style='color:{}'>78.0%</tr>
-      <tr><td>Clang Builds Or Has Note:</td><td style='text-align: right; width:{num_chars}ch'>1240</td><td class='stats_per_col'>86.6%</tr>
+      <tr><td>Clang Builds Or Has Note:</td><td style='text-align: right; width:{num_chars}ch'>1245</td><td class='stats_per_col'>86.9%</tr>
       <tr><td>Regressions: :</td><td style='text-align: right; width:{num_chars}ch'>233</td><td class='stats_per_col'>16.3%</tr>
       <tr><td>Fixed:</td><td style='text-align: right; width:{num_chars}ch'>0</td><td class='stats_per_col'>0.0%</tr>
       <tr><td>Missing:</td><td style='text-align: right; width:{num_chars}ch'>50</td><td class='stats_per_col'>3.5%</tr>
     </table>
-    <div class="last_updated">Last Updated: <div id='timestamp' style="display: inline-block;">04/06/2023 03:13:17 UTC</div></div>
+    <div class="last_updated">Last Updated: <div id='timestamp' style="display: inline-block;">04/06/2023 03:51:40 UTC</div></div>
     <script>
       var date = new Date(document.getElementById("timestamp").innerHTML);
       document.getElementById("timestamp").innerHTML = date.toString();
@@ -2617,13 +2618,13 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr >
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2098181'><span class='tooltip'>gnome-remote-desktop-43.2-1.fc37</span>gnome-remote-desktop-43.2-1.fc37</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f37/package/gnome-remote-desktop/rebuild'>Rebuild</a></td>
         <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f37/build/5725814/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f37/package/gnome-remote-desktop'>[Build History]</a></td></td>
-        <td class='pkg_cell'><span class='tooltip'></span></td>
+        <td class='pkg_cell'><span class='tooltip'>error: initializer element is not a compile-time constant</span>error: initializer element is not a compile-time constant</td>
         </tr>
       
         <tr  class='even_row'>
@@ -4300,13 +4301,13 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr  class='even_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2014285'><span class='tooltip'>libdb-5.3.28-53.fc37</span>libdb-5.3.28-53.fc37</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f37/package/libdb/rebuild'>Rebuild</a></td>
         <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f37/build/5649222/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f37/package/libdb'>[Build History]</a></td></td>
-        <td class='pkg_cell'><span class='tooltip'></span></td>
+        <td class='pkg_cell'><span class='tooltip'>[-Wint-conversion] Error</span>[-Wint-conversion] Error</td>
         </tr>
       
         <tr  class='todo_row'>
@@ -4855,7 +4856,7 @@
         <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f37/package/libkdumpfile'>MISSING</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f37/build/5414723/'><span class='tooltip'>libkdumpfile-0.5.0-1</span>libkdumpfile-0.5.0-1</a></td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f37/package/libkdumpfile'>[Build History]</a></td></td>
-        <td class='pkg_cell'><span class='tooltip'></span></td>
+        <td class='pkg_cell'><span class='tooltip'>Upstream fix: https://github.com/ptesarik/libkdumpfile/pull/69</span>Upstream fix: https://github.com/ptesarik/libkdumpfile/pull/69</td>
         </tr>
       
         <tr  class='even_row'>
@@ -4984,13 +4985,13 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr  class='even_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2014528'><span class='tooltip'>libmbim-1.26.4-2.fc37</span>libmbim-1.26.4-2.fc37</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f37/package/libmbim/rebuild'>Rebuild</a></td>
         <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f37/build/5695861/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f37/package/libmbim'>[Build History]</a></td></td>
-        <td class='pkg_cell'><span class='tooltip'></span></td>
+        <td class='pkg_cell'><span class='tooltip'>https://github.com/llvm/llvm-project/issues/61691</span>https://github.com/llvm/llvm-project/issues/61691</td>
         </tr>
       
         <tr >
@@ -5497,22 +5498,22 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr >
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2109464'><span class='tooltip'>libqmi-1.30.8-1.fc37</span>libqmi-1.30.8-1.fc37</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f37/package/libqmi/rebuild'>Rebuild</a></td>
         <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f37/build/5695868/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f37/package/libqmi'>[Build History]</a></td></td>
-        <td class='pkg_cell'><span class='tooltip'></span></td>
+        <td class='pkg_cell'><span class='tooltip'>https://github.com/llvm/llvm-project/issues/61691</span>https://github.com/llvm/llvm-project/issues/61691</td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr  class='even_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2014701'><span class='tooltip'>libqrtr-glib-1.0.0-4.fc37</span>libqrtr-glib-1.0.0-4.fc37</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f37/package/libqrtr-glib/rebuild'>Rebuild</a></td>
         <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f37/build/5697300/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f37/package/libqrtr-glib'>[Build History]</a></td></td>
-        <td class='pkg_cell'><span class='tooltip'></span></td>
+        <td class='pkg_cell'><span class='tooltip'>https://github.com/llvm/llvm-project/issues/61691</span>https://github.com/llvm/llvm-project/issues/61691</td>
         </tr>
       
         <tr >
