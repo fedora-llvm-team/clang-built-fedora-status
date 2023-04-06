@@ -407,8 +407,8 @@ use_copr = True
 f35 = CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f35')
 f36 = CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f36')
 f37 = CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f37')
-f38 = CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f38')
 f37_clang16 = CoprResults(u'https://copr.fedorainfracloud.org', 'tstellar', 'fedora-37-clang-16')
+f38 = CoprResults(u'https://copr.fedorainfracloud.org', '@fedora-llvm-team', 'clang-built-f38')
 
 comparisons = [
 (KojiResults('f36'), f36),
@@ -424,7 +424,7 @@ comparisons = [
 
 if len(tags) !=1 and os.path.isdir('./copr-reporter'):
 
-    pages = ['f36', 'f37', 'f38']
+    pages = ['f36', 'f37', 'f38', 'f38-llvm17-20230401']
 
     print("COPR REPORTER", pages)
     old_cwd = os.getcwd()
