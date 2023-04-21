@@ -26,13 +26,20 @@ def generate_report(title, results, description):
     report.close()
 
 def get_combined_build_state(chroots):
-    state = 'succeeded'
+    state = None
     for c in chroots:
         chroot = chroots[c]
         if chroot['state'] == 'failed':
             state = 'failed'
             break
-    return state
+        if chroot['state'] == 'succeeded':
+            state = 'succeeded'
+            continue
+        if chroot['state'] == 'missing':
+            if not state:
+                state = 'missing'
+            continue
+    return 'failed' if not state else state
 
 if __name__ == '__main__':
     title = "Clang Mass Rebuild TODO dashboard"
