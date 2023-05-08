@@ -1,6 +1,7 @@
 import configparser
 import json
 from copr.v3 import Client
+import os
 import sys
 import io
 import urllib
@@ -88,8 +89,14 @@ try:
     notes_cfg.optionxform = str
     notes_cfg.read_file(notes_file)
 except Exception as e:
-    print(e, f"Failed to load notes file: {filename}")
-    notes_cfg = {'willfix' : {}, 'wontfix' : {}}
+    try:
+        notes_file=open('status/' + os.path.basename(config_file)[:-4] + ".cfg")
+        notes_cfg = configparser.ConfigParser()
+        notes_cfg.optionxform = str
+        notes_cfg.read_file(notes_file)
+    except Exception as e:
+        print(e, f"Failed to load notes file: {filename}")
+        notes_cfg = {'willfix' : {}, 'wontfix' : {}}
 
 for p in packages_next:
     state = get_combined_build_state(p['chroots'])
