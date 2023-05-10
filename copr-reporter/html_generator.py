@@ -41,6 +41,27 @@ def get_combined_build_state(chroots):
             continue
     return 'failed' if not state else state
 
+
+def get_state_change(chroots_a, chroots_b):
+    chroots = set(chroots_a.keys()) | set(chroots_b.keys())
+    state = "Same results"
+    for c in chroots:
+        if c not in chroots_a or c not in chroots_b:
+            continue
+        chroot_a = chroots_a[c]
+        chroot_b = chroots_b[c]
+
+        if chroot_a['state'] == 'succeeded' and chroot_b['state'] == 'failed':
+            return 'Regression'
+        if chroot_a['state'] == 'failed' and chroot_b['state'] == 'succeeded':
+            state = "Fixed"
+            continue
+        if chroot_a['state'] != chroot_b['state']:
+            state = "Something has changed. You should verify the builds"
+            continue
+    return state
+
+
 if __name__ == '__main__':
     title = "Clang Mass Rebuild TODO dashboard"
     packages = {}
@@ -54,13 +75,7 @@ if __name__ == '__main__':
         packages[k]['changed'] = 'Same results'
         state_a = get_combined_build_state(packages[k]['builds_a']['chroots'])
         state_b = get_combined_build_state(packages[k]['builds_b']['chroots'])
-        if state_a == 'succeeded' and state_b == 'failed':
-            packages[k]['changed'] = "Regression"
-        elif state_a == 'failed' and state_b == 'succeeded':
-            packages[k]['changed'] = "Fixed"
-        elif state_a != state_b:
-            packages[k]['changed'] = "Something has changed. You should verify the builds"
-    
+        packages[k]['changed'] = get_state_change(packages[k]['builds_a']['chroots'], packages[k]['builds_b']['chroots'])
         description = f"""
     Explanation of the columns:<ul>
     <li>Name: The name of the package.</li>
