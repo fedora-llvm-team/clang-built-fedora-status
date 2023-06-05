@@ -53,6 +53,11 @@ def add_url_build_log_field(project, packages):
             chroot = p['chroots'][c]
             chroot['url_build_log'] = "{}0{}-{}/builder-live.log{}".format(project['chroot_repos'][c], chroot['build_id'], p['name'],
                                                                       ".gz" if chroot['state'] != 'running' else "")
+            chroot['url_resubmit'] = 'https://copr.fedorainfracloud.org/coprs/g/{}/repeat_build/{}/'.format(project['full_name'][1:], chroot['build_id'])
+
+def add_url_rebuild_field(project, packages):
+    for p in packages:
+        p['url_rebuild'] = "https://copr.fedorainfracloud.org/coprs/g/{}/package/{}/rebuild".format(project['full_name'][1:], p['name'])
 
 config_file = './config.ini'
 if len(sys.argv) == 2:
@@ -76,6 +81,8 @@ packages_current = response['packages']
 
 add_url_build_log_field(project_current, packages_current)
 add_url_build_log_field(project_next, packages_next)
+add_url_rebuild_field(project_current, packages_current)
+add_url_rebuild_field(project_next, packages_next)
 #print(json.dumps(packages_next))
 
 results = {}

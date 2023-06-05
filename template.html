@@ -35,7 +35,9 @@
 	.missing {
             visibility: hidden;
 	}
-
+        .rebuild, .rebuild > a {
+            color: grey;
+        }
     </style>
 </head>
 <body>
@@ -95,8 +97,14 @@
                         <i class="bi bi-slash-circle"></i>
                         {% endif %}
                         <a href="{{ b['url_build_log'] }}"> {{ k.split('-')[-1] }} </a>
+                        &emsp;<span class="rebuild">
+                            (<a href="{{ b['url_resubmit'] }}">Resubmit</a>)
+                        </span>
                     </p>
                     {% endfor %}
+                    <span class="rebuild">
+                        (<a href="{{ data['builds_a']['url_rebuild'] }}">Rebuild</a>)
+                    </span>
                 </td>
                 <td>
                     {% for k, b in data["builds_b"]["chroots"].items()|sort() %}
@@ -118,12 +126,18 @@
                         {% endif %}
                         {% if b.url is not none %}
                         <a href="{{ b.url_build_log }}"> {{ k.split('-')[-1] }} </a>
+                        &emsp;<span class="rebuild">
+                            (<a href="{{ b['url_resubmit'] }}">Resubmit</a>)
+                        </span>
                         {% else %}
                         {{ b.arch }}
                         {% endif %}
 
                     </p>
                     {% endfor %}
+                    <span class="rebuild">
+                        (<a href="{{ data['builds_b']['url_rebuild'] }}">Rebuild</a>)
+                    </span>
                 </td><td>
                 {% if data['changed'] == 'Regression' %}
                     {{ data['changed'] }}
