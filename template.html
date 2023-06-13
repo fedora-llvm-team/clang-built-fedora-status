@@ -35,7 +35,9 @@
 	.missing {
             visibility: hidden;
 	}
-
+        .rebuild, .rebuild > a {
+            color: grey;
+        }
     </style>
 </head>
 <body>
@@ -47,6 +49,7 @@
 	<a href='f38-todo.html'>Fedora 38</a>
 	<a href='f38-llvm17-20230401-todo.html'>Fedora 38/LLVM 17 Snapshot (2023-04-01)</a>
 	<a href='f38-llvm17-20230508-todo.html'>Fedora 38/LLVM 17 Snapshot (2023-05-08)</a>
+	<a href='f38-llvm17-20230601-todo.html'>Fedora 38/LLVM 17 Snapshot (2023-06-01)</a>
         <a href='f38-status.html'>More Data</a><br><br>
 	{{ description }}
         </p>
@@ -94,8 +97,14 @@
                         <i class="bi bi-slash-circle"></i>
                         {% endif %}
                         <a href="{{ b['url_build_log'] }}"> {{ k.split('-')[-1] }} </a>
+                        &emsp;<span class="rebuild">
+                            (<a href="{{ b['url_resubmit'] }}">Resubmit</a>)
+                        </span>
                     </p>
                     {% endfor %}
+                    <span class="rebuild">
+                        (<a href="{{ data['builds_a']['url_rebuild'] }}">Rebuild</a>)
+                    </span>
                 </td>
                 <td>
                     {% for k, b in data["builds_b"]["chroots"].items()|sort() %}
@@ -117,12 +126,18 @@
                         {% endif %}
                         {% if b.url is not none %}
                         <a href="{{ b.url_build_log }}"> {{ k.split('-')[-1] }} </a>
+                        &emsp;<span class="rebuild">
+                            (<a href="{{ b['url_resubmit'] }}">Resubmit</a>)
+                        </span>
                         {% else %}
                         {{ b.arch }}
                         {% endif %}
 
                     </p>
                     {% endfor %}
+                    <span class="rebuild">
+                        (<a href="{{ data['builds_b']['url_rebuild'] }}">Rebuild</a>)
+                    </span>
                 </td><td>
                 {% if data['changed'] == 'Regression' %}
                     {{ data['changed'] }}
