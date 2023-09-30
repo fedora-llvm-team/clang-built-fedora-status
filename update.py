@@ -419,7 +419,7 @@ comparisons = [
 (f35, f36),
 (f36, f37),
 (f37, f38),
-(f37, f37_clang16)
+(f37, f37_clang16),
 (f38, f39)
 ]
 
