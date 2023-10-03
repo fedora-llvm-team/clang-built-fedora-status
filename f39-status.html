@@ -73,14 +73,14 @@
     <table class='stats_table even_row'>
       <tr><th colspan='3'>Summary</th></tr>
       <tr><td>Fedora Packages:</td><td style='text-align: right;'>1429</td><td></td></tr>
-      <tr><td>Clang Builds:</td><td style='text-align: right; width:{ num_chars }ch'>367</td><td class='stats_per_col' style='color:{}'>25.7%</td></tr>
-      <tr><td>Clang Builds Latest:</td><td style='text-align: right; width:{num_chars}ch'>364</td><td class='stats_per_col' style='color:{}'>25.5%</tr>
-      <tr><td>Clang Builds Or Has Note:</td><td style='text-align: right; width:{num_chars}ch'>367</td><td class='stats_per_col'>25.7%</tr>
-      <tr><td>Regressions: :</td><td style='text-align: right; width:{num_chars}ch'>935</td><td class='stats_per_col'>65.4%</tr>
+      <tr><td>Clang Builds:</td><td style='text-align: right; width:{ num_chars }ch'>396</td><td class='stats_per_col' style='color:{}'>27.7%</td></tr>
+      <tr><td>Clang Builds Latest:</td><td style='text-align: right; width:{num_chars}ch'>393</td><td class='stats_per_col' style='color:{}'>27.5%</tr>
+      <tr><td>Clang Builds Or Has Note:</td><td style='text-align: right; width:{num_chars}ch'>396</td><td class='stats_per_col'>27.7%</tr>
+      <tr><td>Regressions: :</td><td style='text-align: right; width:{num_chars}ch'>906</td><td class='stats_per_col'>63.4%</tr>
       <tr><td>Fixed:</td><td style='text-align: right; width:{num_chars}ch'>0</td><td class='stats_per_col'>0.0%</tr>
       <tr><td>Missing:</td><td style='text-align: right; width:{num_chars}ch'>127</td><td class='stats_per_col'>8.9%</tr>
     </table>
-    <div class="last_updated">Last Updated: <div id='timestamp' style="display: inline-block;">10/03/2023 09:12:58 UTC</div></div>
+    <div class="last_updated">Last Updated: <div id='timestamp' style="display: inline-block;">10/03/2023 10:13:52 UTC</div></div>
     <script>
       var date = new Date(document.getElementById("timestamp").innerHTML);
       document.getElementById("timestamp").innerHTML = date.toString();
@@ -89,11 +89,11 @@
       <tr><th colspan='2'>Fedora</th><th colspan='4'>Fedora Clang</th></tr>
       <tr><th colspan='2'>Latest Build</th><th>Latest Build</th><th>Latest Success</th><th></th><th>Notes</th></tr>
       
-        <tr  class='todo_row'>
+        <tr  class='even_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2268956'><span class='tooltip'>389-ds-base-2.4.3-1.fc39</span>389-ds-base-2.4.3-1.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/389-ds-base/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485895/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485895/'><span class='tooltip'>389-ds-base-2.4.3-1</span>389-ds-base-2.4.3-1</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/389-ds-base'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -152,11 +152,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr >
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2272124'><span class='tooltip'>NetworkManager-1.44.0-1.fc39</span>NetworkManager-1.44.0-1.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/NetworkManager/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485865/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485865/'><span class='tooltip'>NetworkManager-1:1.44.0-1</span>NetworkManager-1:1.44.0-1</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/NetworkManager'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -200,7 +200,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2234991'><span class='tooltip'>NetworkManager-openconnect-1.2.10-2.fc39</span>NetworkManager-openconnect-1.2.10-2.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/NetworkManager-openconnect/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386705/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486082/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/NetworkManager-openconnect'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -344,7 +344,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2235610'><span class='tooltip'>aide-0.18.4-3.fc39</span>aide-0.18.4-3.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/aide/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386801/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486137/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/aide'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -395,29 +395,29 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr  class='even_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2235755'><span class='tooltip'>anthy-unicode-1.0.0.20211224-10.fc39</span>anthy-unicode-1.0.0.20211224-10.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/anthy-unicode/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485928/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485928/'><span class='tooltip'>anthy-unicode-1.0.0.20211224-10</span>anthy-unicode-1.0.0.20211224-10</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/anthy-unicode'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr >
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2235761'><span class='tooltip'>antlr-2.7.7-73.fc39</span>antlr-2.7.7-73.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/antlr/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485987/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485987/'><span class='tooltip'>antlr-2.7.7-73</span>antlr-2.7.7-73</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/antlr'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr  class='even_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2267981'><span class='tooltip'>antlr4-project-4.10.1-10.fc39</span>antlr4-project-4.10.1-10.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/antlr4-project/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485921/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485921/'><span class='tooltip'>antlr4-project-4.10.1-10</span>antlr4-project-4.10.1-10</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/antlr4-project'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -812,7 +812,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2236403'><span class='tooltip'>capstone-4.0.2-15.fc39</span>capstone-4.0.2-15.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/capstone/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386790/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486126/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/capstone'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -1097,11 +1097,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr  class='even_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2269621'><span class='tooltip'>codec2-1.2.0-2.fc39</span>codec2-1.2.0-2.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/codec2/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486009/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486009/'><span class='tooltip'>codec2-1.2.0-2</span>codec2-1.2.0-2</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/codec2'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -1223,11 +1223,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr  class='even_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2267076'><span class='tooltip'>createrepo_c-1.0.0-1.fc39</span>createrepo_c-1.0.0-1.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/createrepo_c/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386664/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486053/'><span class='tooltip'>createrepo_c-1.0.0-1</span>createrepo_c-1.0.0-1</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/createrepo_c'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -1235,7 +1235,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2227565'><span class='tooltip'>criu-3.18-3.fc39</span>criu-3.18-3.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/criu/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386717/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486090/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/criu'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -1376,11 +1376,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr >
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2237012'><span class='tooltip'>dbusmenu-qt-0.9.3-0.32.20160218.fc39</span>dbusmenu-qt-0.9.3-0.32.20160218.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/dbusmenu-qt/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386667/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486054/'><span class='tooltip'>dbusmenu-qt-0.9.3-0.32.20160218</span>dbusmenu-qt-0.9.3-0.32.20160218</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/dbusmenu-qt'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -1673,11 +1673,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr  class='even_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2237358'><span class='tooltip'>duo_unix-1.12.1-7.fc39</span>duo_unix-1.12.1-7.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/duo_unix/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486026/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486026/'><span class='tooltip'>duo_unix-1.12.1-7</span>duo_unix-1.12.1-7</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/duo_unix'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -1685,7 +1685,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2237344'><span class='tooltip'>dvd+rw-tools-7.1-39.fc39</span>dvd+rw-tools-7.1-39.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/dvd+rw-tools/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386692/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486078/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/dvd+rw-tools'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -1712,7 +1712,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2237356'><span class='tooltip'>dwz-0.15-3.fc39</span>dwz-0.15-3.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/dwz/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386835/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486205/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/dwz'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -2087,11 +2087,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr  class='even_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2237973'><span class='tooltip'>flatpak-xdg-utils-1.0.5-4.fc39</span>flatpak-xdg-utils-1.0.5-4.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/flatpak-xdg-utils/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485942/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485942/'><span class='tooltip'>flatpak-xdg-utils-1.0.5-4</span>flatpak-xdg-utils-1.0.5-4</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/flatpak-xdg-utils'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -2108,7 +2108,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2263412'><span class='tooltip'>flexiblas-3.3.1-5.fc39</span>flexiblas-3.3.1-5.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/flexiblas/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386832/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486204/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/flexiblas'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -2126,7 +2126,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2238027'><span class='tooltip'>fmt-10.0.0-3.fc39</span>fmt-10.0.0-3.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/fmt/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386792/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486130/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/fmt'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -2261,7 +2261,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2238148'><span class='tooltip'>ftp-0.17-93.fc39</span>ftp-0.17-93.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/ftp/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386831/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486202/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/ftp'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -2414,7 +2414,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2238397'><span class='tooltip'>gettext-0.22-2.fc39</span>gettext-0.22-2.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/gettext/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386808/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486147/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/gettext'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -2459,7 +2459,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2239119'><span class='tooltip'>glade-3.40.0-5.fc39</span>glade-3.40.0-5.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/glade/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386772/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486107/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/glade'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -2576,7 +2576,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2280566'><span class='tooltip'>gnome-desktop3-44.0-7.fc39</span>gnome-desktop3-44.0-7.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/gnome-desktop3/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6390772/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486108/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/gnome-desktop3'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -3107,7 +3107,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2241462'><span class='tooltip'>hdf-4.2.15-13.fc39</span>hdf-4.2.15-13.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/hdf/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386841/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486209/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/hdf'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -3359,7 +3359,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2241863'><span class='tooltip'>ima-evm-utils-1.5-2.fc39</span>ima-evm-utils-1.5-2.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/ima-evm-utils/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386702/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486081/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/ima-evm-utils'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -3440,7 +3440,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2241962'><span class='tooltip'>iotop-0.6-38.fc39</span>iotop-0.6-38.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/iotop/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386758/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486105/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/iotop'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -3458,7 +3458,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2241961'><span class='tooltip'>ipcalc-1.0.3-2.fc39</span>ipcalc-1.0.3-2.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/ipcalc/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386783/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486116/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/ipcalc'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -3482,11 +3482,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr >
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2241978'><span class='tooltip'>iptables-1.8.9-5.fc39</span>iptables-1.8.9-5.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/iptables/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485953/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485953/'><span class='tooltip'>iptables-1.8.9-5</span>iptables-1.8.9-5</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/iptables'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -3512,7 +3512,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2269400'><span class='tooltip'>ipvsadm-1.31-11.fc39</span>ipvsadm-1.31-11.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/ipvsadm/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386804/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486141/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/ipvsadm'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -3554,11 +3554,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr >
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2242063'><span class='tooltip'>jansi-2.4.0-8.fc39</span>jansi-2.4.0-8.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/jansi/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386662/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486052/'><span class='tooltip'>jansi-2.4.0-8</span>jansi-2.4.0-8</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/jansi'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -3680,11 +3680,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr >
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2242271'><span class='tooltip'>kbd-2.6.1-2.fc39</span>kbd-2.6.1-2.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/kbd/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386675/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486064/'><span class='tooltip'>kbd-2.6.1-2</span>kbd-2.6.1-2</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/kbd'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -3755,7 +3755,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2294111'><span class='tooltip'>kernel-6.5.5-300.fc39</span>kernel-6.5.5-300.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/kernel/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6437806/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486110/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/kernel'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -3809,7 +3809,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2293616'><span class='tooltip'>kf5-kquickcharts-5.110.0-1.fc39</span>kf5-kquickcharts-5.110.0-1.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/kf5-kquickcharts/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6431355/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486200/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/kf5-kquickcharts'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -4187,7 +4187,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2242920'><span class='tooltip'>libbpf-1.1.0-4.fc39</span>libbpf-1.1.0-4.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libbpf/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386847/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486210/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libbpf'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -4742,11 +4742,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr >
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2287554'><span class='tooltip'>libheif-1.16.2-2.fc39</span>libheif-1.16.2-2.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libheif/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485948/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485948/'><span class='tooltip'>libheif-1.16.2-2</span>libheif-1.16.2-2</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libheif'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -4781,7 +4781,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2243170'><span class='tooltip'>libicu72-72.1-2.fc39</span>libicu72-72.1-2.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libicu72/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386673/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486061/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libicu72'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -4880,7 +4880,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2243188'><span class='tooltip'>libiptcdata-1.0.5-15.fc39</span>libiptcdata-1.0.5-15.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libiptcdata/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386709/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486089/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libiptcdata'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -5024,7 +5024,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2243254'><span class='tooltip'>liblouis-3.25.0-3.fc39</span>liblouis-3.25.0-3.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/liblouis/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386768/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486106/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/liblouis'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -5246,11 +5246,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr >
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2243332'><span class='tooltip'>libnma-1.10.6-4.fc39</span>libnma-1.10.6-4.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libnma/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386690/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486071/'><span class='tooltip'>libnma-1.10.6-4</span>libnma-1.10.6-4</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libnma'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -5300,11 +5300,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr >
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2243450'><span class='tooltip'>libopenmpt-0.6.11-1.fc39</span>libopenmpt-0.6.11-1.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libopenmpt/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486028/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486028/'><span class='tooltip'>libopenmpt-0.6.11-1</span>libopenmpt-0.6.11-1</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libopenmpt'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -5327,11 +5327,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr  class='even_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2263422'><span class='tooltip'>libotf-0.9.16-1.fc39</span>libotf-0.9.16-1.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libotf/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386672/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486059/'><span class='tooltip'>libotf-0.9.16-1</span>libotf-0.9.16-1</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libotf'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -5471,11 +5471,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr  class='even_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2281515'><span class='tooltip'>libqalculate-4.8.0-1.fc39</span>libqalculate-4.8.0-1.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libqalculate/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486020/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486020/'><span class='tooltip'>libqalculate-4.8.0-1</span>libqalculate-4.8.0-1</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libqalculate'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -5501,7 +5501,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2243432'><span class='tooltip'>libqrtr-glib-1.2.2-3.fc39</span>libqrtr-glib-1.2.2-3.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libqrtr-glib/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386786/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486121/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libqrtr-glib'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -5609,7 +5609,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2243495'><span class='tooltip'>libsamplerate-0.2.2-5.fc39</span>libsamplerate-0.2.2-5.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libsamplerate/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386812/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486148/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libsamplerate'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -5852,7 +5852,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2270316'><span class='tooltip'>libtevent-0.15.0-1.fc39</span>libtevent-0.15.0-1.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libtevent/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386822/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486191/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libtevent'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -5912,11 +5912,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr >
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2243593'><span class='tooltip'>libtraceevent-1.7.2-3.fc39</span>libtraceevent-1.7.2-3.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libtraceevent/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386651/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486036/'><span class='tooltip'>libtraceevent-1.7.2-3</span>libtraceevent-1.7.2-3</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libtraceevent'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -6068,7 +6068,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2243648'><span class='tooltip'>libvma-9.8.1-3.fc39</span>libvma-9.8.1-3.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libvma/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386793/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486134/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/libvma'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -6374,7 +6374,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2243822'><span class='tooltip'>logrotate-3.21.0-4.fc39</span>logrotate-3.21.0-4.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/logrotate/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386743/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486091/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/logrotate'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -6581,7 +6581,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2244068'><span class='tooltip'>maliit-framework-2.3.0-4.fc39</span>maliit-framework-2.3.0-4.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/maliit-framework/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386708/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486085/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/maliit-framework'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -7022,7 +7022,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2244843'><span class='tooltip'>mpfr-4.2.0-3.fc39</span>mpfr-4.2.0-3.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/mpfr/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386656/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486049/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/mpfr'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -7301,7 +7301,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2272547'><span class='tooltip'>nfs-utils-2.6.3-1.rc3.fc39</span>nfs-utils-2.6.3-1.rc3.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/nfs-utils/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6415719/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486196/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/nfs-utils'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -7310,7 +7310,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2245104'><span class='tooltip'>nftables-1.0.7-3.fc39</span>nftables-1.0.7-3.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/nftables/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386798/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486135/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/nftables'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -7526,7 +7526,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2245517'><span class='tooltip'>ogdi-4.1.0-11.fc39</span>ogdi-4.1.0-11.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/ogdi/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386776/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486113/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/ogdi'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -7562,7 +7562,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2245551'><span class='tooltip'>opal-prd-7.0-7.fc39</span>opal-prd-7.0-7.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/opal-prd/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386671/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486058/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/opal-prd'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -7724,17 +7724,17 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2245657'><span class='tooltip'>openscap-1.3.8-5.fc39</span>openscap-1.3.8-5.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/openscap/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386691/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486074/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/openscap'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr >
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2245675'><span class='tooltip'>opensm-3.3.24-6.fc39</span>opensm-3.3.24-6.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/opensm/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386654/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486047/'><span class='tooltip'>opensm-3.3.24-6</span>opensm-3.3.24-6</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/opensm'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -7823,17 +7823,17 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2245706'><span class='tooltip'>orc-0.4.33-3.fc39</span>orc-0.4.33-3.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/orc/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386789/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486125/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/orc'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr  class='even_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2245712'><span class='tooltip'>os-prober-1.81-4.fc39</span>os-prober-1.81-4.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/os-prober/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386652/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486043/'><span class='tooltip'>os-prober-1.81-4</span>os-prober-1.81-4</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/os-prober'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -9242,11 +9242,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr >
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2249761'><span class='tooltip'>popt-1.19-3.fc39</span>popt-1.19-3.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/popt/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486013/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486013/'><span class='tooltip'>popt-1.19-3</span>popt-1.19-3</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/popt'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -9452,7 +9452,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2259577'><span class='tooltip'>pybind11-2.11.1-1.fc39</span>pybind11-2.11.1-1.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/pybind11/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386785/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486119/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/pybind11'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -9737,11 +9737,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr  class='even_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2252262'><span class='tooltip'>python-pyrsistent-0.19.3-10.fc39</span>python-pyrsistent-0.19.3-10.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/python-pyrsistent/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386677/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486065/'><span class='tooltip'>python-pyrsistent-0.19.3-10</span>python-pyrsistent-0.19.3-10</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/python-pyrsistent'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -10118,7 +10118,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2252390'><span class='tooltip'>qt6-qtquicktimeline-6.5.2-1.fc39</span>qt6-qtquicktimeline-6.5.2-1.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/qt6-qtquicktimeline/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386791/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486127/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/qt6-qtquicktimeline'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -10181,7 +10181,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2252383'><span class='tooltip'>qt6-qttools-6.5.2-1.fc39</span>qt6-qttools-6.5.2-1.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/qt6-qttools/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386781/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486115/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/qt6-qttools'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -10316,7 +10316,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2267171'><span class='tooltip'>rdma-core-46.0-4.fc39</span>rdma-core-46.0-4.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/rdma-core/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386818/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486184/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/rdma-core'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -10802,7 +10802,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2272444'><span class='tooltip'>setools-4.4.3-1.fc39</span>setools-4.4.3-1.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/setools/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386774/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486109/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/setools'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -10835,11 +10835,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr  class='even_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2256638'><span class='tooltip'>setxkbmap-1.3.4-2.fc39</span>setxkbmap-1.3.4-2.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/setxkbmap/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485941/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485941/'><span class='tooltip'>setxkbmap-1.3.4-2</span>setxkbmap-1.3.4-2</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/setxkbmap'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -11027,7 +11027,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2256830'><span class='tooltip'>softhsm-2.6.1-5.fc39.7</span>softhsm-2.6.1-5.fc39.7</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/softhsm/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386817/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486153/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/softhsm'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -11357,11 +11357,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr  class='even_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2274864'><span class='tooltip'>swtpm-0.8.1-3.fc39</span>swtpm-0.8.1-3.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/swtpm/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485916/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485916/'><span class='tooltip'>swtpm-0.8.1-3</span>swtpm-0.8.1-3</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/swtpm'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -11396,7 +11396,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2293377'><span class='tooltip'>sysprof-45.0-1.fc39</span>sysprof-45.0-1.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/sysprof/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6430023/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486207/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/sysprof'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -11936,7 +11936,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2257768'><span class='tooltip'>uriparser-0.9.7-3.fc39</span>uriparser-0.9.7-3.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/uriparser/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386696/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486080/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/uriparser'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -12005,11 +12005,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr  class='even_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2257798'><span class='tooltip'>userspace-rcu-0.14.0-3.fc39</span>userspace-rcu-0.14.0-3.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/userspace-rcu/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485956/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485956/'><span class='tooltip'>userspace-rcu-0.14.0-3</span>userspace-rcu-0.14.0-3</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/userspace-rcu'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -12050,11 +12050,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr >
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2257816'><span class='tooltip'>v4l-utils-1.25.0-3.fc39</span>v4l-utils-1.25.0-3.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/v4l-utils/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386650/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486034/'><span class='tooltip'>v4l-utils-1.25.0-3</span>v4l-utils-1.25.0-3</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/v4l-utils'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -12374,11 +12374,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr >
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2281742'><span class='tooltip'>wireshark-4.0.8-2.fc39</span>wireshark-4.0.8-2.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/wireshark/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485504/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6485504/'><span class='tooltip'>wireshark-1:4.0.8-2</span>wireshark-1:4.0.8-2</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/wireshark'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
@@ -12557,7 +12557,7 @@
         <tr  class='todo_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2258370'><span class='tooltip'>xfsdump-3.1.12-2.fc39</span>xfsdump-3.1.12-2.fc39</a></td>
         <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/xfsdump/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386757/'>FAILED</a></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486095/'>FAILED</a></td>
         <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/xfsdump'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
@@ -12653,11 +12653,11 @@
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
       
-        <tr  class='todo_row'>
+        <tr  class='even_row'>
         <td class='pkg_cell'><a href='https://koji.fedoraproject.org/koji//buildinfo?buildID=2258471'><span class='tooltip'>xorg-x11-proto-devel-2023.2-2.fc39</span>xorg-x11-proto-devel-2023.2-2.fc39</a></td>
-        <td><a target='_blank' href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/xorg-x11-proto-devel/rebuild'>Rebuild</a></td>
-        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6386659/'>FAILED</a></td>
-        <td class='pkg_cell' style='max-width: 20ch;'>NONE</td>
+        <td></td>
+        <td class='pkg_cell'><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/build/6486051/'><span class='tooltip'>xorg-x11-proto-devel-2023.2-2</span>xorg-x11-proto-devel-2023.2-2</a></td>
+        <td class='pkg_cell' style='max-width: 20ch;'>SAME</td>
         <td><a href='https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/clang-built-f39/package/xorg-x11-proto-devel'>[Build History]</a></td></td>
         <td class='pkg_cell'><span class='tooltip'></span></td>
         </tr>
