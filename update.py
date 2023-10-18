@@ -427,7 +427,7 @@ comparisons = [
 
 if len(tags) !=1 and os.path.isdir('./copr-reporter'):
 
-    pages = ['f36', 'f37', 'f38', 'f38-llvm17-20230601', 'f39']
+    pages = ['f36', 'f37', 'f38', 'f38-llvm18-20231016', 'f39']
 
     print("COPR REPORTER", pages)
     old_cwd = os.getcwd()
