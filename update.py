@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-import cgi
 import dnf
 import rpm
 import koji
@@ -395,12 +394,7 @@ package_exclude_list = [
     'llvm'
 ]
 
-form = cgi.FieldStorage()
 tags = ['f36', 'f37', 'f38', 'f39', 'clang-built-f36', 'clang-built-f37', 'clang-built-f38', 'fedora-37-clang-16']
-if "tag" in form:
-    tag = form['tag'].value
-    if tag in tags:
-        tags = [tag]
 
 use_copr = True
 
